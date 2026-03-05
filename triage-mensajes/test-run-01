@@ -18,7 +18,7 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 | # | Idioma | Mensaje (resumen) | Expected intent | Pred intent | Expected prio | Pred prio | OK JSON | Tono | Notas |
 |---|--------|-------------------|----------------|------------|--------------|----------|--------|------|------|
 | 1 | ES | Horarios check-in/out | CHECK_IN_OUT | CHECK_IN_OUT | P2 | P2 | Si | Si | Cumple spec. No inventa horarios. Solicita fechas para orientar. |
-| 2 | ES | Late check-out mañana | CHECK_IN_OUT |  | P2/P1* |  |  |  |  |
+| 2 | ES | Late check-out mañana | CHECK_IN_OUT | CHECK_IN_OUT | P2/P1* | P1 | Si | Si | Correcto en intent y formato. Prioridad: para ‘mañana’ sin urgencia debería ser P2. |
 | 3 | ES | Early check-in hoy (lobby) | CHECK_IN_OUT |  | P1 |  |  |  |  |
 | 4 | ES | Transporte mañana 6am | TRANSPORTE |  | P1 |  |  |  |  |
 | 5 | ES | AC no sirve urgente ahora | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Si | Si | Correcto. Pide room_number/reserva, autoriza acceso y escala a mantenimiento. Propone alternativas sujetas a disponibilidad. |
@@ -37,9 +37,9 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 \*Nota: Late check-out “mañana” suele ser P2, pero si dice “hoy” o “en 1 hora”, subir a P1.
 
 ## Conclusiones
-- Aciertos:
-- Errores:
-- Ajustes necesarios (reglas/prompts):
+- Aciertos: 3
+- Errores: 1
+- Ajustes necesarios (reglas/prompts): 
 - Próximo paso:
 
 ## Configuración usada
@@ -47,5 +47,25 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 - Prompts: `prompts.md` (versión v0.1)
 - Dataset: `dataset.md`
 
+## Conclusiones
 
+### Aciertos
+- El sistema respeta la lista cerrada de intents y el esquema JSON.
+- Maneja correctamente prioridades P2 (información), P1 (incidencias urgentes) y P0 (emergencias).
+- Mantiene tono de lujo formal en ES/EN.
+- Evita inventar datos de reserva/habitación y solicita información faltante.
+
+### Errores / Observaciones
+- Se requirió calibración para normalizar `channel="whatsapp"` y ajustar CHECK_IN_OUT a prioridad P2.
+- En emergencias (P0), definir política: permitir o restringir instrucciones de seguridad generales (ej. humo).
+
+### Ajustes necesarios (reglas/prompts)
+- Forzar `channel` en minúsculas.
+- Regla explícita para CHECK_IN_OUT horarios => P2.
+- Definir política de “mensajes P0”: solo escalación + ubicación (sin instrucciones adicionales) o permitir instrucciones generales.
+
+### Próximo paso
+- Completar el test-run con los 16 mensajes del dataset.
+- Calcular accuracy de intent y priority.
+- Versión v0.2: añadir RAG con FAQ/políticas (ficticias) para respuestas más precisas sin inventar.
 
