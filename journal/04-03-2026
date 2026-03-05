@@ -1,0 +1,5 @@
+## Mini-proyecto: Triage WhatsApp (MVP)
+- Hoy definí: 8 intents + reglas P0/P1 + JSON de salida + prompts + dataset ficticio.
+- Mi mayor riesgo detectado: ¿Asigna prioridad correctamente? (P0/P1/P2).
+- Cómo lo mitigaría: Analizar las palabras que entrega el cliente para identificar correctamente la Regla.
+- Próximo experimento: correr 16 mensajes y medir precisión de intent/priority.
