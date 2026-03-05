@@ -1,0 +1,206 @@
+# Documento de Contexto de Aprendizaje (IA)
+**Enfoque:** IA aplicada a hotelería (Riviera Maya)  
+**Propósito:** guía de estudio + evidencia pública para portafolio (CV)
+
+---
+
+## Índice
+- [1. Contexto académico y de aprendizaje](#1-contexto-académico-y-de-aprendizaje)
+- [2. Objetivo profesional](#2-objetivo-profesional)
+- [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
+- [4. Fortalezas y desafíos](#4-fortalezas-y-desafíos)
+- [5. Estilo de aprendizaje](#5-estilo-de-aprendizaje)
+- [6. Experiencia con herramientas de IA](#6-experiencia-con-herramientas-de-ia)
+- [7. Cómo quiero trabajar con IA (4D)](#7-cómo-quiero-trabajar-con-ia-4d)
+- [8. Uso responsable (privacidad e integridad)](#8-uso-responsable-privacidad-e-integridad)
+- [9. Evidencia para mi portafolio y CV](#9-evidencia-para-mi-portafolio-y-cv)
+
+---
+
+## 1. Contexto académico y de aprendizaje
+
+Actualmente estoy estudiando inteligencia artificial y explorando cómo puede aplicarse en entornos empresariales reales. Mi principal interés es aplicar IA en la **industria hotelera**, especialmente en la región de la **Riviera Maya**, donde ya existen hoteles interesados en implementar IA en sus operaciones.
+
+Cuento con certificación como **Pentester Junior**, lo cual me ha dado conocimientos básicos en:
+- Ciberseguridad y buenas prácticas
+- Sistemas y redes
+- Análisis técnico de problemas y evaluación de riesgos
+
+Mi objetivo es ampliar mis conocimientos combinando la **conciencia en ciberseguridad** con **soluciones basadas en IA** que permitan automatizar y mejorar procesos operativos en organizaciones.
+
+---
+
+## 2. Objetivo profesional
+
+Quiero especializarme en **IA aplicada a operaciones hoteleras** para poder postular a vacantes orientadas a:
+- Diagnóstico de procesos rutinarios
+- Construcción de **agentes de IA** (por ejemplo, integraciones con sistemas empresariales)
+- Medición de impacto (tiempo ahorrado, errores eliminados, costo evitado)
+- Despliegue en producción con monitoreo (no solo prototipos)
+- Capacitación a equipos no técnicos
+
+**Meta de corto plazo:** construir evidencia práctica y pública de aprendizaje (documentos + proyectos) que demuestre capacidades reales para un rol de implementación.
+
+---
+
+## 3. Objetivos de aprendizaje
+
+### A corto plazo (0–2 meses)
+- Desarrollar fluidez en IA y aprender a colaborar eficazmente con herramientas de IA.
+- Comprender cómo la IA puede **aumentar el trabajo humano** sin reemplazar mi aprendizaje.
+- Aprender a **analizar problemas de negocio** e identificar dónde la IA puede aportar valor.
+- Mejorar mi capacidad para describir problemas de forma clara (prompts y especificaciones).
+
+### A mediano plazo (2–6 meses)
+- Aprender **Python** aplicado a automatización e integración con IA.
+- Comprender cómo funcionan los **agentes de IA** (conceptos y frameworks).
+- Practicar integraciones con **APIs** (REST, autenticación, webhooks).
+- Construir proyectos “tipo empresa” con métricas de impacto.
+
+### A largo plazo (6–12 meses)
+- Implementar soluciones con arquitectura más completa:
+  - logs / monitoreo
+  - control de costos
+  - privacidad y seguridad
+  - documentación y handoff a equipos
+
+---
+
+## 4. Fortalezas y desafíos
+
+### Fortalezas
+- Curiosidad fuerte por tecnologías emergentes.
+- Mentalidad de resolución de problemas reales (no solo teoría).
+- Base en ciberseguridad (útil para IA responsable en empresas).
+- Aprendo rápido cuando hay ejemplos prácticos y escenarios reales.
+
+### Desafíos / brechas actuales
+- Experiencia limitada en desarrollo de soluciones de IA en producción.
+- Necesito fortalecer práctica en:
+  - programación (Python)
+  - integración con sistemas empresariales (APIs, bases de datos)
+  - diseño de flujos y agentes de IA
+  - medición y reporte de impacto
+
+---
+
+## 5. Estilo de aprendizaje
+
+Aprendo mejor cuando:
+- Los conceptos se conectan con **casos reales** (especialmente hotelería).
+- Tengo **pasos claros** y ejemplos concretos.
+- Puedo construir algo pequeño, probarlo y mejorarlo (iteración).
+
+Me ayuda especialmente:
+- Checklist de verificación
+- Ejercicios con escenarios
+- Retroalimentación y mejora continua (iteraciones)
+
+---
+
+## 6. Experiencia con herramientas de IA
+
+Tengo experiencia básica con IA (por ejemplo, ChatGPT) para:
+- entender conceptos
+- explorar ideas
+- estructurar contenido
+
+Quiero avanzar hacia:
+- diseñar flujos de trabajo asistidos por IA
+- crear prototipos de agentes
+- integrar IA con sistemas vía API
+- documentar y medir el valor (impacto real)
+
+---
+
+## 7. Cómo quiero trabajar con IA (4D)
+
+> Objetivo: usar IA como **partner de aprendizaje**, no como sustituto de mi razonamiento.
+
+### 7.1 Delegación (qué le pido a la IA)
+- Brainstorming de soluciones a problemas operativos hoteleros
+- Explicaciones paso a paso con ejemplos
+- Propuestas de arquitectura y componentes (alto nivel)
+- Checklists de validación (calidad, seguridad, métricas)
+- Feedback sobre mi trabajo (documentos, ideas, código)
+
+✅ **Sí quiero:** guía, práctica, feedback  
+❌ **No quiero:** que haga mi trabajo completo sin entenderlo
+
+---
+
+### 7.2 Descripción (cómo le explico el problema)
+Cuando pida ayuda, describiré:
+
+**Producto (qué necesito)**
+- resultado esperado (ej.: “un flujo de agente para atención a huésped”)
+
+**Proceso (cómo debe trabajar)**
+- pasos, restricciones, herramientas, datos disponibles
+
+**Desempeño (cómo medirlo)**
+- precisión, tiempo, costo, seguridad, satisfacción
+
+**Plantilla (para copiar/pegar):**
+- **Contexto:** …
+- **Objetivo:** …
+- **Datos disponibles:** …
+- **Restricciones:** …
+- **Qué significa éxito:** …
+- **Formato de salida:** …
+
+---
+
+### 7.3 Discernimiento (cómo evalúo la respuesta)
+Checklist:
+- ¿Esto es correcto o está inventando?
+- ¿Se puede implementar con mis recursos?
+- ¿Aporta impacto real (tiempo/costo/errores)?
+- ¿Qué riesgos de privacidad o seguridad hay?
+- ¿Qué parte debo verificar con fuentes/documentación?
+
+---
+
+### 7.4 Diligencia (responsabilidad)
+- No compartiré datos sensibles (huéspedes, finanzas, credenciales).
+- Respetaré políticas académicas y de empresa.
+- Mantendré trazabilidad:
+  - qué pedí a la IA
+  - qué acepté
+  - qué modifiqué
+  - qué verifiqué
+
+---
+
+## 8. Uso responsable (privacidad e integridad)
+
+**Reglas personales:**
+- Nunca pegar: datos de clientes, reservas reales, correos internos, contraseñas, llaves API.
+- Cuando use ejemplos: usar datos ficticios o anonimizados.
+- Verificar lo importante antes de usarlo en un proyecto o entrega.
+
+---
+
+## 9. Evidencia para mi portafolio y CV
+
+Publicaré evidencia real de progreso, por ejemplo:
+
+### Documentos
+- `learning-context.md` (este documento)
+- `learning-journal.md` (bitácora semanal: qué aprendí, qué probé, qué falló, qué sigue)
+- `case-studies/` (casos de uso hoteleros con problema → solución → métricas)
+
+### Proyectos (ejemplos)
+- Prototipo: clasificación de reseñas de huéspedes (temas + prioridad)
+- Prototipo: asistente concierge con base de conocimiento (FAQ + políticas)
+- Prototipo: agente para responder correos de reservas (con revisión humana)
+
+### Métricas de progreso (para mí)
+- # de proyectos publicados
+- # de iteraciones y mejoras
+- lecciones aprendidas por semana
+- checklist de seguridad aplicado
+
+---
+
+**Fin del documento.**
