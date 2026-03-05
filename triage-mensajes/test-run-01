@@ -1,0 +1,43 @@
+# Test Run 01 — Triage WhatsApp (MVP)
+
+## Objetivo
+Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo formal) usando dataset ficticio.
+
+## Dataset
+- Fuente: dataset.md
+- Tamaño: 16 mensajes (ES/EN)
+
+## Métricas a evaluar
+- Intent accuracy (acierto de intención)
+- Priority accuracy (acierto de prioridad)
+- JSON válido (sí/no)
+- Tono lujo formal (sí/no)
+- No inventa datos (sí/no)
+
+## Resultados (tabla)
+| # | Idioma | Mensaje (resumen) | Expected intent | Pred intent | Expected prio | Pred prio | OK JSON | Tono | Notas |
+|---|--------|-------------------|----------------|------------|--------------|----------|--------|------|------|
+| 1 | ES | Horarios check-in/out | CHECK_IN_OUT |  | P2 |  |  |  |  |
+| 2 | ES | Late check-out mañana | CHECK_IN_OUT |  | P2/P1* |  |  |  |  |
+| 3 | ES | Early check-in hoy (lobby) | CHECK_IN_OUT |  | P1 |  |  |  |  |
+| 4 | ES | Transporte mañana 6am | TRANSPORTE |  | P1 |  |  |  |  |
+| 5 | ES | AC no sirve urgente ahora | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
+| 6 | ES | No abre puerta habitación | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
+| 7 | ES | Inundación baño | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
+| 8 | ES | Emergencia sangre caída | URGENCIA_SEGURIDAD |  | P0 |  |  |  |  |
+| 9 | ES | Tour a Tulum | CONCIERGE_TOURS |  | P2 |  |  |  |  |
+| 10 | ES | Restaurante romántico | CONCIERGE_TOURS |  | P2 |  |  |  |  |
+| 11 | ES | Horario room service + menú | RESTAURANTE_ROOM_SERVICE |  | P2 |  |  |  |  |
+| 12 | ES | Agendar masaje pareja | SPA_AMENIDADES |  | P2 |  |  |  |  |
+| 13 | EN | Check-in/out times | CHECK_IN_OUT |  | P2 |  |  |  |  |
+| 14 | EN | Airport transportation today 7pm | TRANSPORTE |  | P1 |  |  |  |  |
+| 15 | EN | AC not working right now | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
+| 16 | EN | Emergency smoke can't breathe | URGENCIA_SEGURIDAD |  | P0 |  |  |  |  |
+
+\*Nota: Late check-out “mañana” suele ser P2, pero si dice “hoy” o “en 1 hora”, subir a P1.
+
+## Conclusiones
+- Aciertos:
+- Errores:
+- Ajustes necesarios (reglas/prompts):
+- Próximo paso:
