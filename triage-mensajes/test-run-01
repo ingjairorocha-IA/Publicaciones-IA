@@ -26,8 +26,8 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 | 7 | ES | Inundación baño | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Si | Si | Correcto. Inundación => P1. Escala a mantenimiento/housekeeping y contempla reubicación sin prometer. |
 | 8 | ES | Emergencia sangre caída | URGENCIA_SEGURIDAD | URGENCIA_SEGURIDAD | P0 | P0 | Si | Si | Correcto. Escala inmediato, pide ubicación/contacto, no da instrucciones médicas. |
 | 9 | ES | Tour a Tulum | CONCIERGE_TOURS | CONCIERGE_TOURS | P2 | P2 | Si | Si | Correcto. Pide fecha, # personas y preferencias (privado/compartido) y escala a Concierge. |
-| 10 | ES | Restaurante romántico | RESTAURANTE_ROOM_SERVICE |  | P2 |  |  |  | Correcto si el intent cubre reservas/recomendaciones de restaurantes (interno/externo). Si se considera externo, podría ser Concierge. |
-| 11 | ES | Horario room service + menú | RESTAURANTE_ROOM_SERVICE |  | P2 |  |  |  |  |
+| 10 | ES | Restaurante romántico | RESTAURANTE_ROOM_SERVICE | RESTAURANTE_ROOM_SERVICE | P2 | P2 | Si | Si | Correcto si el intent cubre reservas/recomendaciones de restaurantes (interno/externo). Si se considera externo, podría ser Concierge. |
+| 11 | ES | Horario room service + menú | RESTAURANTE_ROOM_SERVICE | RESTAURANTE_ROOM_SERVICE | P2 | P2 | Si | Si | Correcto. scope=ON_PROPERTY. No inventa horarios/menú; solicita preferencias y ofrece tomar pedido. |
 | 12 | ES | Agendar masaje pareja | SPA_AMENIDADES |  | P2 |  |  |  |  |
 | 13 | EN | Check-in/out times | CHECK_IN_OUT |  | P2 |  |  |  |  |
 | 14 | EN | Airport transportation today 7pm | TRANSPORTE |  | P1 |  |  |  |  |
