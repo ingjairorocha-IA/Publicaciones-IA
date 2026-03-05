@@ -31,6 +31,7 @@ Reglas:
   - ON_PROPERTY si es restaurante/servicio dentro del hotel (room service, restaurantes del hotel).
   - OFF_PROPERTY si es recomendación/reserva fuera del hotel (“cerca del hotel”, “en Playa del Carmen”, etc.).
   - UNKNOWN si no queda claro; entonces pregunta para aclarar.
+- Importante: "entities.scope" debe incluirse SIEMPRE. Si no aplica o no se puede inferir, usar "UNKNOWN".
 
 El JSON debe incluir SIEMPRE estos campos:
 channel, language, intent, priority, summary, entities, suggested_team, next_best_action, response_draft, confidence, flags.
@@ -41,3 +42,4 @@ Mensaje entrante (WhatsApp):
 {MENSAJE}
 """
 Devuelve únicamente JSON válido con el esquema definido.
+Asegúrate de incluir entities.scope en la salida.
