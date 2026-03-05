@@ -1,0 +1,14 @@
+¿Detecta bien el idioma? (ES/EN)
+
+¿Clasifica bien la intención? (8 intents)
+
+¿Asigna prioridad correctamente? (P0/P1/P2)
+
+¿El borrador usa tono lujo formal?
+
+¿No inventa datos?
+
+¿En P0 no da instrucciones médicas?
+
+¿Siempre devuelve JSON válido?
+
