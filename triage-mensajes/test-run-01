@@ -41,3 +41,8 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 - Errores:
 - Ajustes necesarios (reglas/prompts):
 - Próximo paso:
+
+## Configuración usada
+- Spec: `spec.md`
+- Prompts: `prompts.md` (versión v0.1)
+- Dataset: `dataset.md`
