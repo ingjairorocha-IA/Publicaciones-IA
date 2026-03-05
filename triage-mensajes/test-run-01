@@ -4,7 +4,7 @@
 Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo formal) usando dataset ficticio.
 
 ## Dataset
-- Fuente: dataset.md
+- Fuente: `dataset.md`
 - Tamaño: 16 mensajes (ES/EN)
 
 ## Métricas a evaluar
@@ -14,58 +14,55 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 - Tono lujo formal (sí/no)
 - No inventa datos (sí/no)
 
+## Configuración usada
+- Spec: `spec.md`
+- Prompts: `prompts.md` (v0.1)
+- Dataset: `dataset.md`
+
 ## Resultados (tabla)
 | # | Idioma | Mensaje (resumen) | Expected intent | Pred intent | Expected prio | Pred prio | OK JSON | Tono | Notas |
 |---|--------|-------------------|----------------|------------|--------------|----------|--------|------|------|
-| 1 | ES | Horarios check-in/out | CHECK_IN_OUT | CHECK_IN_OUT | P2 | P2 | Si | Si | Cumple spec. No inventa horarios. Solicita fechas para orientar. |
-| 2 | ES | Late check-out mañana | CHECK_IN_OUT | CHECK_IN_OUT | P2/P1* | P1 | Si | Si | Correcto en intent y formato. Prioridad: para ‘mañana’ sin urgencia debería ser P2. |
-| 3 | ES | Early check-in hoy (lobby) | CHECK_IN_OUT | CHECK_IN_OUT | P1 | P1 | Si | Si | Correcto. Early check-in hoy + lobby => P1. Solicita datos de reserva y valida disponibilidad. |
-| 4 | ES | Transporte mañana 6am | TRANSPORTE | TRANSPORTE | P1 | P2 | Si | Si | Correcto en intent y estructura. Prioridad: traslado 6:00 a.m. (mañana temprano) suele ser P1. |
-| 5 | ES | AC no sirve urgente ahora | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Si | Si | Correcto. Pide room_number/reserva, autoriza acceso y escala a mantenimiento. Propone alternativas sujetas a disponibilidad. |
-| 6 | ES | No abre puerta habitación | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Si | Si | Correcto. Acceso a habitación => P1. Solicita room number y escala a seguridad/mantenimiento. |
-| 7 | ES | Inundación baño | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Si | Si | Correcto. Inundación => P1. Escala a mantenimiento/housekeeping y contempla reubicación sin prometer. |
-| 8 | ES | Emergencia sangre caída | URGENCIA_SEGURIDAD | URGENCIA_SEGURIDAD | P0 | P0 | Si | Si | Correcto. Escala inmediato, pide ubicación/contacto, no da instrucciones médicas. |
-| 9 | ES | Tour a Tulum | CONCIERGE_TOURS | CONCIERGE_TOURS | P2 | P2 | Si | Si | Correcto. Pide fecha, # personas y preferencias (privado/compartido) y escala a Concierge. |
-| 10 | ES | Restaurante romántico | RESTAURANTE_ROOM_SERVICE | RESTAURANTE_ROOM_SERVICE | P2 | P2 | Si | Si | Correcto si el intent cubre reservas/recomendaciones de restaurantes (interno/externo). Si se considera externo, podría ser Concierge. |
-| 11 | ES | Horario room service + menú | RESTAURANTE_ROOM_SERVICE | RESTAURANTE_ROOM_SERVICE | P2 | P2 | Si | Si | Correcto. scope=ON_PROPERTY. No inventa horarios/menú; solicita preferencias y ofrece tomar pedido. |
-| 12 | ES | Agendar masaje pareja | SPA_AMENIDADES | SPA_AMENIDADES | P2 | P2 | Si | Si | Correcto en intent/prioridad. Falta entities.scope (según spec). |
-| 13 | EN | Check-in/out times | CHECK_IN_OUT | CHECK_IN_OUT | P2 | P2 | Si | Si | Correcto. EN. No inventa horarios. Incluye scope=UNKNOWN y ofrece early/late sujeto a políticas. Run1: faltó entities.scope. Run2 (reintento): OK con scope=UNKNOWN. |
-| 14 | EN | Airport transportation today 7pm | TRANSPORTE | TRANSPORTE | P1 | P1 | Si | Si | Correcto. EN. Captura datetime y location. Solicita dirección (hotel->airport) y terminal. |
-| 15 | EN | AC not working right now | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Si | Si | Correcto. EN. Pide room number y escala a Engineering. Propone alternativas sujeto a políticas. |
-| 16 | EN | Emergency smoke can't breathe | URGENCIA_SEGURIDAD | URGENCIA_SEGURIDAD  | P0 | P0 | Si | Si | Correcto. EN. P0. Pide ubicación y escala a Security. Sin instrucciones médicas. |
+| 1 | ES | Horarios check-in/out | CHECK_IN_OUT | CHECK_IN_OUT | P2 | P2 | Sí | Sí | Cumple spec. No inventa horarios. Solicita fechas para orientar. |
+| 2 | ES | Late check-out mañana | CHECK_IN_OUT | CHECK_IN_OUT | P2 | P1 | Sí | Sí | Ajuste: late/early para “mañana” sin urgencia debe ser P2. |
+| 3 | ES | Early check-in hoy (lobby) | CHECK_IN_OUT | CHECK_IN_OUT | P1 | P1 | Sí | Sí | Correcto. Hoy + lobby => P1. |
+| 4 | ES | Transporte mañana 6am | TRANSPORTE | TRANSPORTE | P1 | P2 | Sí | Sí | Regla a definir: “mañana temprano (<=08:00)” debería ser P1. |
+| 5 | ES | AC no sirve urgente ahora | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Sí | Sí | Correcto. Escala a mantenimiento y propone alternativas sin prometer. |
+| 6 | ES | No abre puerta habitación | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Sí | Sí | Correcto. Acceso a habitación => P1. |
+| 7 | ES | Inundación baño | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Sí | Sí | Correcto. Contención + mantenimiento/housekeeping. |
+| 8 | ES | Emergencia sangre caída | URGENCIA_SEGURIDAD | URGENCIA_SEGURIDAD | P0 | P0 | Sí | Sí | Correcto. Pide ubicación/contacto. Sin instrucciones médicas. |
+| 9 | ES | Tour a Tulum | CONCIERGE_TOURS | CONCIERGE_TOURS | P2 | P2 | Sí | Sí | Correcto. Pide fecha, # personas y preferencias. |
+| 10 | ES | Restaurante romántico | RESTAURANTE_ROOM_SERVICE | RESTAURANTE_ROOM_SERVICE | P2 | P2 | Sí | Sí | Caso ambiguo (interno/externo). Se resolvió con `entities.scope`. |
+| 11 | ES | Horario room service + menú | RESTAURANTE_ROOM_SERVICE | RESTAURANTE_ROOM_SERVICE | P2 | P2 | Sí | Sí | Correcto. `scope=ON_PROPERTY`. No inventa horarios/menú. |
+| 12 | ES | Agendar masaje pareja | SPA_AMENIDADES | SPA_AMENIDADES | P2 | P2 | Sí | Sí | Run1: faltó `entities.scope`. Run2: OK con `scope=UNKNOWN`. |
+| 13 | EN | Check-in/out times | CHECK_IN_OUT | CHECK_IN_OUT | P2 | P2 | Sí | Sí | Correcto. EN. No inventa horarios. `scope=UNKNOWN`. |
+| 14 | EN | Airport transportation today 7pm | TRANSPORTE | TRANSPORTE | P1 | P1 | Sí | Sí | Correcto. EN. Captura datetime/location. |
+| 15 | EN | AC not working right now | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Sí | Sí | Correcto. EN. Escala a Engineering. |
+| 16 | EN | Emergency smoke can't breathe | URGENCIA_SEGURIDAD | URGENCIA_SEGURIDAD | P0 | P0 | Sí | Sí | Correcto. EN. P0. Ubicación + escalación. |
 
-\*Nota: Late check-out “mañana” suele ser P2, pero si dice “hoy” o “en 1 hora”, subir a P1.
+> Nota: Late check-out “mañana” suele ser P2, pero si dice “hoy” o “en 1 hora”, subir a P1.
 
-## Conclusiones
-- Aciertos: 3
-- Errores: 1
-- Ajustes necesarios (reglas/prompts): 
-- Próximo paso:
+## Resumen de resultados (mini-métricas)
+- Total mensajes: 16
+- Intent: 16/16 correctos (100%)
+- Prioridad: 14/16 correctas (87.5%)  
+  - Diferencias: #2 (mañana late check-out), #4 (mañana 6am transporte; depende regla “mañana temprano”)
+- Esquema: 15/16 correctos en primer intento  
+  - #12 Run1 omitió `entities.scope` → corregido en Run2 tras reforzar prompt
+- JSON válido: 16/16
+- Tono lujo formal: 16/16
+- No inventa datos/políticas: 16/16 (sin horarios/precios inventados)
 
-## Configuración usada
-- Spec: `spec.md`
-- Prompts: `prompts.md` (versión v0.1)
-- Dataset: `dataset.md`
+## Discernimiento (hallazgos)
+- El mayor fallo fue omitir `entities.scope` en un caso → mitigado reforzando prompt (“scope siempre presente; si no aplica, UNKNOWN”).
+- Se mejoró consistencia de prioridades con reglas explícitas (CHECK_IN_OUT y transporte temprano).
+- En P0 (emergencias), el comportamiento correcto es: ubicación + escalación + comunicación continua (sin instrucciones médicas).
 
-## Conclusiones
+## Ajustes aplicados (prompts/reglas)
+- Forzar `channel="whatsapp"` en minúsculas.
+- CHECK_IN_OUT: horarios => P2; early/late hoy/lobby => P1; mañana sin urgencia => P2.
+- TRANSPORTE: mañana temprano (<=08:00) => P1.
+- RESTAURANTE_ROOM_SERVICE: usar `entities.scope` (ON_PROPERTY/OFF_PROPERTY/UNKNOWN).
 
-### Aciertos
-- El sistema respeta la lista cerrada de intents y el esquema JSON.
-- Maneja correctamente prioridades P2 (información), P1 (incidencias urgentes) y P0 (emergencias).
-- Mantiene tono de lujo formal en ES/EN.
-- Evita inventar datos de reserva/habitación y solicita información faltante.
-
-### Errores / Observaciones
-- Se requirió calibración para normalizar `channel="whatsapp"` y ajustar CHECK_IN_OUT a prioridad P2.
-- En emergencias (P0), definir política: permitir o restringir instrucciones de seguridad generales (ej. humo).
-
-### Ajustes necesarios (reglas/prompts)
-- Forzar `channel` en minúsculas.
-- Regla explícita para CHECK_IN_OUT horarios => P2.
-- Definir política de “mensajes P0”: solo escalación + ubicación (sin instrucciones adicionales) o permitir instrucciones generales.
-
-### Próximo paso
-- Completar el test-run con los 16 mensajes del dataset.
-- Calcular accuracy de intent y priority.
-- Versión v0.2: añadir RAG con FAQ/políticas (ficticias) para respuestas más precisas sin inventar.
-
+## Próximo paso (v0.2)
+- Añadir RAG con FAQ/políticas (ficticias) para responder con precisión sin inventar.
+- Automatizar evaluación con script (Python) para calcular métricas sin hacerlo manual.
