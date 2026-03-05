@@ -19,8 +19,8 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 |---|--------|-------------------|----------------|------------|--------------|----------|--------|------|------|
 | 1 | ES | Horarios check-in/out | CHECK_IN_OUT | CHECK_IN_OUT | P2 | P2 | Si | Si | Cumple spec. No inventa horarios. Solicita fechas para orientar. |
 | 2 | ES | Late check-out mañana | CHECK_IN_OUT | CHECK_IN_OUT | P2/P1* | P1 | Si | Si | Correcto en intent y formato. Prioridad: para ‘mañana’ sin urgencia debería ser P2. |
-| 3 | ES | Early check-in hoy (lobby) | CHECK_IN_OUT |  | P1 |  |  |  |  |
-| 4 | ES | Transporte mañana 6am | TRANSPORTE |  | P1 |  |  |  |  |
+| 3 | ES | Early check-in hoy (lobby) | CHECK_IN_OUT | CHECK_IN_OUT | P1 | P1 | Si | Si | Correcto. Early check-in hoy + lobby => P1. Solicita datos de reserva y valida disponibilidad. |
+| 4 | ES | Transporte mañana 6am | TRANSPORTE | TRANSPORTE | P1 | P2 | Si | Si | Correcto en intent y estructura. Prioridad: traslado 6:00 a.m. (mañana temprano) suele ser P1. |
 | 5 | ES | AC no sirve urgente ahora | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Si | Si | Correcto. Pide room_number/reserva, autoriza acceso y escala a mantenimiento. Propone alternativas sujetas a disponibilidad. |
 | 6 | ES | No abre puerta habitación | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
 | 7 | ES | Inundación baño | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
