@@ -1,0 +1,5 @@
+## Ejercicio 1 (B) — Triage de mensajes
+- Caso elegido: Triage + borrador de respuesta para mensajes de huéspedes.
+- Entregables: One-pager + taxonomía + reglas de prioridad.
+- Decisiones pendientes: canal, 8 intents, reglas P0/P1, idiomas, tono.
+- Próximo paso: crear 30 mensajes ficticios (dataset) y evaluar clasificación.
