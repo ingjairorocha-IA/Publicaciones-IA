@@ -1,0 +1,80 @@
+# Backlog IA — Procesos rutinarios hotelería (Riviera Maya)
+
+## Criterios
+- Impacto (1–5): ahorro de tiempo, reducción de errores, ingresos, experiencia huésped.
+- Facilidad (1–5): rapidez de implementación (texto, datos, integraciones).
+- Riesgo (1–5): privacidad/compliance, riesgo operativo, reputación.
+
+> Nota: Al inicio, preferir “IA asistida” (human-in-the-loop) vs automatización total.
+
+---
+
+## 1) Atención al huésped: triage + borradores de respuesta (WhatsApp/correo/chat)
+- Descripción: clasificar mensajes (pregunta, queja, urgencia), sugerir respuesta, adjuntar links/políticas.
+- Integraciones: bandeja de mensajes + base de conocimiento (políticas, horarios, amenidades).
+- Métrica: tiempo de primera respuesta (FRT), tickets resueltos, satisfacción, reducción de retrabajo.
+- Impacto: 5 | Facilidad: 4 | Riesgo: 3
+- Tipo: QUICK WIN (con revisión humana)
+
+## 2) Concierge: recomendaciones personalizadas y planificación (tours/spa/restaurantes)
+- Descripción: itinerarios, recomendaciones por perfil, restricciones y presupuesto; sugerir upsells.
+- Integraciones: catálogo de servicios + disponibilidad + proveedores (DMC).
+- Métrica: upsell, conversión, NPS, ahorro de tiempo concierge.
+- Impacto: 4 | Facilidad: 3 | Riesgo: 3
+- Tipo: Estrategia (aplicable con RAG + reglas)
+
+## 3) Reservas: FAQ inteligente + explicación de políticas (cambios/cancelaciones/no-show)
+- Descripción: responder dudas repetidas con base en políticas; escalar casos especiales.
+- Integraciones: base de políticas + condiciones de tarifa.
+- Métrica: reducción de correos repetidos, FRT, tasa de escalamiento.
+- Impacto: 4 | Facilidad: 4 | Riesgo: 3
+- Tipo: QUICK WIN
+
+## 4) Ventas: respuesta a leads + calificación (HubSpot/CRM)
+- Descripción: leer lead, extraer necesidades, proponer respuesta, pedir datos faltantes, crear/update en CRM.
+- Integraciones: CRM + plantillas + catálogo de paquetes.
+- Métrica: tiempo de respuesta a leads, conversión, carga operativa reducida.
+- Impacto: 5 | Facilidad: 3 | Riesgo: 3
+- Tipo: Apuesta estratégica (muy rentable)
+
+## 5) Reputación: análisis de reseñas y encuestas (temas, sentimiento, urgencia, acciones)
+- Descripción: agrupar quejas por tema (limpieza, check-in, comida), detectar tendencias, proponer acciones.
+- Integraciones: fuentes de reseñas/encuestas + tablero interno.
+- Métrica: reducción de quejas repetidas, tiempo de análisis, acciones cerradas.
+- Impacto: 4 | Facilidad: 5 | Riesgo: 2
+- Tipo: QUICK WIN (excelente para portafolio)
+
+## 6) Operación: clasificación de incidencias y creación de tickets (mantenimiento/housekeeping)
+- Descripción: convertir mensajes o notas en tickets con prioridad y área responsable.
+- Integraciones: sistema de tickets o mantenimiento + PMS (habitación/huésped).
+- Métrica: tiempo de asignación, SLA, reducción de tickets mal clasificados.
+- Impacto: 4 | Facilidad: 3 | Riesgo: 3
+- Tipo: Estrategia
+
+## 7) Finanzas: extracción y validación básica de facturas (pre-contabilidad)
+- Descripción: extraer datos (proveedor, monto, fecha), detectar inconsistencias, preparar para revisión.
+- Integraciones: ERP/contabilidad + almacenamiento de facturas.
+- Métrica: horas ahorradas, errores detectados, tiempo de ciclo.
+- Impacto: 4 | Facilidad: 2 | Riesgo: 4
+- Tipo: Alto impacto pero alto riesgo (hacer después, con controles)
+
+## 8) RH: asistente interno de políticas + onboarding (FAQ empleados)
+- Descripción: responder dudas internas (permisos, uniformes, horarios), guiar onboarding.
+- Integraciones: documentos RH + manuales + flujos de solicitudes.
+- Métrica: reducción de preguntas repetidas, tiempo de onboarding, satisfacción interna.
+- Impacto: 3 | Facilidad: 5 | Riesgo: 2
+- Tipo: QUICK WIN
+
+## 9) Legal: resumen y revisión preliminar de contratos (borradores, riesgos, checklist)
+- Descripción: resumir, extraer cláusulas clave, checklist de riesgos; NO firmar/decidir.
+- Integraciones: repositorio de documentos.
+- Métrica: tiempo de revisión, hallazgos, consistencia.
+- Impacto: 3 | Facilidad: 3 | Riesgo: 5
+- Tipo: Postergar / muy controlado
+
+## 10) Housekeeping: optimización de asignación de habitaciones y rutas
+- Descripción: sugerir asignaciones por carga, prioridades, SLA, check-in/out.
+- Integraciones: PMS + housekeeping + reglas operativas.
+- Métrica: tiempos de limpieza, rooms ready, eficiencia.
+- Impacto: 5 | Facilidad: 1 | Riesgo: 4
+- Tipo: Largo plazo (complejo, requiere datos/optimización)
