@@ -17,14 +17,14 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 ## Resultados (tabla)
 | # | Idioma | Mensaje (resumen) | Expected intent | Pred intent | Expected prio | Pred prio | OK JSON | Tono | Notas |
 |---|--------|-------------------|----------------|------------|--------------|----------|--------|------|------|
-| 1 | ES | Horarios check-in/out | CHECK_IN_OUT |  | P2 |  |  |  |  |
+| 1 | ES | Horarios check-in/out | CHECK_IN_OUT | CHECK_IN_OUT | P2 | P2 | Si | Si | Cumple spec. No inventa horarios. Solicita fechas para orientar. |
 | 2 | ES | Late check-out mañana | CHECK_IN_OUT |  | P2/P1* |  |  |  |  |
 | 3 | ES | Early check-in hoy (lobby) | CHECK_IN_OUT |  | P1 |  |  |  |  |
 | 4 | ES | Transporte mañana 6am | TRANSPORTE |  | P1 |  |  |  |  |
-| 5 | ES | AC no sirve urgente ahora | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
+| 5 | ES | AC no sirve urgente ahora | PROBLEMAS_HABITACION | PROBLEMAS_HABITACION | P1 | P1 | Si | Si | Correcto. Pide room_number/reserva, autoriza acceso y escala a mantenimiento. Propone alternativas sujetas a disponibilidad. |
 | 6 | ES | No abre puerta habitación | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
 | 7 | ES | Inundación baño | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
-| 8 | ES | Emergencia sangre caída | URGENCIA_SEGURIDAD |  | P0 |  |  |  |  |
+| 8 | ES | Emergencia sangre caída | URGENCIA_SEGURIDAD | URGENCIA_SEGURIDAD | P0 | P0 | Si | Si | Correcto. Escala inmediato, pide ubicación/contacto, no da instrucciones médicas. |
 | 9 | ES | Tour a Tulum | CONCIERGE_TOURS |  | P2 |  |  |  |  |
 | 10 | ES | Restaurante romántico | CONCIERGE_TOURS |  | P2 |  |  |  |  |
 | 11 | ES | Horario room service + menú | RESTAURANTE_ROOM_SERVICE |  | P2 |  |  |  |  |
@@ -32,7 +32,7 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 | 13 | EN | Check-in/out times | CHECK_IN_OUT |  | P2 |  |  |  |  |
 | 14 | EN | Airport transportation today 7pm | TRANSPORTE |  | P1 |  |  |  |  |
 | 15 | EN | AC not working right now | PROBLEMAS_HABITACION |  | P1 |  |  |  |  |
-| 16 | EN | Emergency smoke can't breathe | URGENCIA_SEGURIDAD |  | P0 |  |  |  |  |
+| 16 | EN | Emergency smoke can't breathe | URGENCIA_SEGURIDAD | URGENCIA_SEGURIDAD  | P0 | P0 | Si | Si | Correcto. Incluye sugerencia de seguridad (“fresh air”); decidir si se permite o se restringe por política. |
 
 \*Nota: Late check-out “mañana” suele ser P2, pero si dice “hoy” o “en 1 hora”, subir a P1.
 
@@ -46,3 +46,6 @@ Probar el clasificador (intent + prioridad) y la calidad del borrador (tono lujo
 - Spec: `spec.md`
 - Prompts: `prompts.md` (versión v0.1)
 - Dataset: `dataset.md`
+
+
+
