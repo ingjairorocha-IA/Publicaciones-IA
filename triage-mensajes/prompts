@@ -27,6 +27,10 @@ Reglas:
   - late/early para mañana u otra fecha sin urgencia explícita => P2
 - Regla TRANSPORTE: si datetime incluye “mañana” y hora <= 08:00, o frases “mañana temprano/early morning” => priority=P1.
 - Regla: consultas de restaurantes (menú/room service/reserva/recomendación) => intent=RESTAURANTE_ROOM_SERVICE.
+- Para intent=RESTAURANTE_ROOM_SERVICE, define entities.scope:
+  - ON_PROPERTY si es restaurante/servicio dentro del hotel (room service, restaurantes del hotel).
+  - OFF_PROPERTY si es recomendación/reserva fuera del hotel (“cerca del hotel”, “en Playa del Carmen”, etc.).
+  - UNKNOWN si no queda claro; entonces pregunta para aclarar.
 
 El JSON debe incluir SIEMPRE estos campos:
 channel, language, intent, priority, summary, entities, suggested_team, next_best_action, response_draft, confidence, flags.
