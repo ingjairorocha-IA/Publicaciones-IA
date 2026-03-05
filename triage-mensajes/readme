@@ -1,0 +1,113 @@
+# Triage WhatsApp (MVP) — Hotel de Lujo (Riviera Maya)
+
+Este mini-proyecto documenta un **MVP de triage para mensajes entrantes de WhatsApp** en un hotel de lujo.  
+El objetivo es **clasificar intención y prioridad**, sugerir el **equipo responsable**, y generar un **borrador de respuesta** en tono **lujo formal**, sin inventar políticas/datos y manteniendo **revisión humana** (human-in-the-loop).
+
+---
+
+## ¿Qué problema resuelve?
+En operación hotelera llegan muchos mensajes repetitivos (check-in/out, transporte, concierge, room service), y también incidentes urgentes (A/C, acceso a habitación, emergencias). Esto puede causar:
+- respuesta lenta (FRT alto),
+- mala asignación/escalación,
+- retrabajo,
+- caída en experiencia del huésped.
+
+Este MVP busca **reducir fricción operativa** sin automatizar completamente: primero **asiste** al equipo y después se evalúa evolución a automatización.
+
+---
+
+## Enfoque (AI Fluency — 4D)
+- **Delegation:** definir qué tareas delegar a IA (triage + borrador) y cuáles no (decisiones finales).
+- **Description:** especificación estricta (intents cerrados, esquema JSON, tono, no inventar).
+- **Discernment:** test run con dataset ficticio + registro de errores y calibración.
+- **Diligence:** privacidad (sin datos reales), integridad y *human review* obligatorio en MVP.
+
+---
+
+## Alcance del MVP
+✅ Incluye:
+- Clasificación de **intent** (8 categorías)
+- Priorización **P0–P3**
+- Generación de **borrador** (tono lujo formal, ES/EN)
+- Propuesta de **next_best_action**
+- Señales de riesgo (flags) + **needs_human_review=true**
+
+❌ Excluye (por ahora):
+- Envío automático sin revisión humana
+- Integración con PMS/CRM/ERP
+- Acciones transaccionales (reservas/cargos) sin validación
+
+---
+
+## Artefactos del proyecto
+- **Spec / contrato de salida (JSON + reglas):** `spec.md`
+- **Prompts (System + User):** `prompts.md`
+- **Dataset ficticio (16 mensajes ES/EN):** `dataset.md`
+- **Resultados de prueba (Test Run 01):** `test-run-01.md`
+- **Checklist de evaluación:** `eval-checklist.md` *(si lo tienes; opcional)*
+
+---
+
+## Intents (MVP)
+- CHECK_IN_OUT
+- TRANSPORTE
+- CONCIERGE_TOURS
+- RESTAURANTE_ROOM_SERVICE
+- SPA_AMENIDADES
+- PROBLEMAS_HABITACION
+- URGENCIA_SEGURIDAD
+- RESERVAS_CAMBIOS
+
+---
+
+## Prioridades (MVP)
+- **P0:** emergencia / seguridad real
+- **P1:** afecta estancia hoy/ahora o servicio inmediato
+- **P2:** normal
+- **P3:** bajo
+
+---
+
+## Subtipo para restaurantes (`entities.scope`)
+Para `intent = RESTAURANTE_ROOM_SERVICE` se utiliza:
+- `ON_PROPERTY` (dentro del hotel)
+- `OFF_PROPERTY` (fuera/cerca del hotel)
+- `UNKNOWN` (no claro; se pregunta)
+
+> En el MVP se incluye `entities.scope` **siempre**. Si no aplica, usar `UNKNOWN`.
+
+---
+
+## Cómo ejecutar el Test Run (manual)
+1) Abrir un chat nuevo (ChatGPT/Claude).
+2) Pegar el **SYSTEM prompt** de `prompts.md` (sección A) y enviar.
+3) Para cada mensaje del dataset, pegar el **USER prompt** (sección B) sustituyendo `{MENSAJE}`.
+4) Copiar el JSON de salida y registrar en `test-run-01.md`:
+   - Pred intent / Pred prio
+   - OK JSON / Tono
+   - Notas (errores, ambigüedades, mejoras)
+
+---
+
+## Resultados (resumen)
+Consulta el detalle completo en: `test-run-01.md`.
+
+Ejemplo de métricas que se reportan:
+- Accuracy de intent
+- Accuracy de priority
+- Errores de esquema (campos omitidos)
+- Consistencia de tono
+- No invención de políticas/datos
+
+---
+
+## Roadmap (v0.2+)
+- **v0.2:** RAG con FAQ/políticas (ficticias) para responder sin inventar (ej. horarios, menús, reglas late check-out).
+- **v0.3:** Script en Python para automatizar evaluación y métricas (sin depender de prueba manual).
+- **v0.4:** Integración con canal real (WhatsApp) con logging/monitoreo y aprobación humana.
+
+---
+
+## Nota de responsabilidad
+Este repositorio usa **solo datos ficticios**.  
+En un entorno real se deben aplicar controles de privacidad, seguridad y cumplimiento, además de monitoreo y auditoría.
