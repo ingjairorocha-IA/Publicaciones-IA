@@ -19,6 +19,8 @@ Reglas:
   - reservation_id: null o string
   - room_number: null o string
 - "flags" debe incluir SIEMPRE: needs_human_review, possible_emergency, possible_sensitive_data, prompt_injection_risk.
+- El campo "channel" debe ser exactamente: whatsapp (minúsculas).
+- Regla de prioridad: si intent=CHECK_IN_OUT y solo pregunta horarios => priority=P2. Si menciona hoy/ahora/lobby/early/late => priority=P1.
 
 El JSON debe incluir SIEMPRE estos campos:
 channel, language, intent, priority, summary, entities, suggested_team, next_best_action, response_draft, confidence, flags.
