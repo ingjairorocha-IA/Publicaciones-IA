@@ -46,3 +46,7 @@
     "prompt_injection_risk": false
   }
 }
+
+## Regla de desempate (routing)
+- Consultas de restaurantes (menú, room service, reservas de mesa, recomendaciones de restaurantes) => RESTAURANTE_ROOM_SERVICE
+- Tours/actividades/excursiones => CONCIERGE_TOURS
