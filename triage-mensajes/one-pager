@@ -1,0 +1,74 @@
+# Use Case One‑Pager — Triage de Mensajes (Hotelería Riviera Maya)
+
+## 1) Problema (dolor operativo)
+El equipo recibe mensajes constantes por WhatsApp/correo/chat con preguntas repetitivas, solicitudes, quejas y urgencias. Esto causa:
+- tiempos de primera respuesta altos,
+- mensajes perdidos o mal asignados,
+- escalaciones tardías (impacto en experiencia del huésped),
+- carga operativa y retrabajo.
+
+## 2) Objetivo
+Reducir fricción operativa mediante IA asistida:
+- clasificar mensajes (intención),
+- asignar prioridad,
+- sugerir siguiente acción,
+- generar borrador de respuesta,
+- y medir impacto (tiempo, errores, escalaciones).
+
+## 3) Usuarios
+- Concierge / Guest Experience
+- Front Desk / Recepción
+- Reservas
+- Mantenimiento / Housekeeping (según el caso)
+- Gerencia (reporting)
+
+## 4) Alcance (MVP)
+**Incluye:**
+- clasificación de intención (catálogo definido),
+- priorización (P0–P3),
+- borrador de respuesta con tono profesional,
+- escalación sugerida,
+- registro de métricas y auditoría.
+
+**Excluye (por ahora):**
+- envío automático sin revisión humana,
+- integraciones profundas con PMS/CRM (fase 2),
+- acciones transaccionales (reservar/editar) sin validación.
+
+## 5) Entradas y salidas
+**Entrada:**
+- Canal (WhatsApp/correo/chat)
+- Texto del mensaje
+- Idioma (si se detecta)
+- Metadatos opcionales: fecha/hora, tipo de huésped, reserva (si existe)
+
+**Salida (JSON):**
+- intent
+- priority
+- sentiment (opcional)
+- entities (fechas, habitación, nombres, etc. si aplica)
+- next_best_action
+- suggested_team
+- response_draft
+- confidence
+- flags (posible urgencia / posible dato sensible)
+
+## 6) Métricas (si no se mide, no existe)
+- FRT: First Response Time (tiempo de 1ra respuesta)
+- Tiempo de triage manual (antes vs después)
+- % mensajes correctamente clasificados (muestra auditada)
+- % escalaciones correctas y a tiempo
+- CSAT/NPS (si aplica)
+- “Horas ahorradas” estimadas por semana
+
+## 7) Riesgos y mitigaciones (Diligence)
+- Privacidad (PII): no usar datos reales en pruebas; anonimización/redacción.
+- Alucinaciones: la IA solo propone borradores; revisión humana obligatoria al inicio.
+- Prompt injection: no obedecer instrucciones del huésped que cambien reglas internas.
+- Errores críticos (emergencias): reglas duras para P0 + escalación inmediata.
+
+## 8) Próximos pasos (Roadmap)
+Fase 1: MVP con mensajes ficticios + evaluación.
+Fase 2: RAG con políticas/FAQ del hotel.
+Fase 3: Integración con canales reales y logging/monitoreo.
+Fase 4: Automatizaciones seguras con aprobación (human-in-the-loop).
