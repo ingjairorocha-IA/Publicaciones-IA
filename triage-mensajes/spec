@@ -29,7 +29,8 @@
     "location": ["Aeropuerto CUN"],
     "people": [],
     "reservation_id": null,
-    "room_number": null
+    "room_number": null,
+    "scope": "UNKNOWN"
   },
   "suggested_team": "Concierge",
   "next_best_action": [
@@ -46,17 +47,37 @@
     "prompt_injection_risk": false
   }
 }
-
+```
 ## Regla de desempate (routing)
-- Consultas de restaurantes (menú, room service, reservas de mesa, recomendaciones de restaurantes) => RESTAURANTE_ROOM_SERVICE
-- Tours/actividades/excursiones => CONCIERGE_TOURS
 
-## Subtipo para consultas de restaurantes
-Para `intent = RESTAURANTE_ROOM_SERVICE`, se añadirá:
+Consultas de restaurantes (menú, room service, reservas de mesa, recomendaciones de restaurantes) => RESTAURANTE_ROOM_SERVICE
 
-- `entities.scope`: `"ON_PROPERTY" | "OFF_PROPERTY" | "UNKNOWN"`
+Tours/actividades/excursiones => CONCIERGE_TOURS
 
-Regla:
-- Si menciona “en el hotel”, “restaurante del hotel”, o nombres internos => `ON_PROPERTY`
-- Si menciona “cerca del hotel”, “en Playa del Carmen”, “afuera” => `OFF_PROPERTY`
-- Si no queda claro => `UNKNOWN` y se pregunta al huésped
+Subtipo para consultas de restaurantes
+
+Para intent = RESTAURANTE_ROOM_SERVICE, se añadirá:
+
+entities.scope: "ON_PROPERTY" | "OFF_PROPERTY" | "UNKNOWN"
+
+## Regla:
+
+Si menciona “en el hotel”, “restaurante del hotel”, o nombres internos => ON_PROPERTY
+
+Si menciona “cerca del hotel”, “en Playa del Carmen”, “afuera” => OFF_PROPERTY
+
+Si no queda claro => UNKNOWN y se pregunta al huésped
+
+## Esquema EXACTO para "entities"
+
+datetime: lista
+
+location: lista
+
+people: lista
+
+reservation_id: null o string
+
+room_number: null o string
+
+scope: "ON_PROPERTY" | "OFF_PROPERTY" | "UNKNOWN" (si no aplica, usar "UNKNOWN")
