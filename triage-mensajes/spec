@@ -1,117 +1,21 @@
-1) Taxonomía final (MVP: 8 intents)
+# Spec — Triage WhatsApp (MVP)
 
-Canal: WhatsApp
-Idiomas: Español + Inglés
-Tono: Lujo formal
-Intenciones:
+## Intents
+- CHECK_IN_OUT
+- TRANSPORTE
+- CONCIERGE_TOURS
+- RESTAURANTE_ROOM_SERVICE
+- SPA_AMENIDADES
+- PROBLEMAS_HABITACION
+- URGENCIA_SEGURIDAD
+- RESERVAS_CAMBIOS
 
-CHECK_IN_OUT
+## Prioridades
+- P0: emergencia/seguridad real
+- P1: afecta estancia hoy/ahora o servicio inmediato
+- P2: normal
+- P3: bajo
 
-TRANSPORTE
-
-CONCIERGE_TOURS
-
-RESTAURANTE_ROOM_SERVICE
-
-SPA_AMENIDADES
-
-PROBLEMAS_HABITACION
-
-URGENCIA_SEGURIDAD
-
-RESERVAS_CAMBIOS
-
-
-2) Reglas de prioridad (P0–P3)
-
-Prioridades
-
-P0 (crítico): seguridad o emergencia real → escalación inmediata
-
-P1 (alto): afecta estancia hoy/ahora o servicio inmediato
-
-P2 (normal): solicitud estándar (información/gestión no urgente)
-
-P3 (bajo): no urgente, “cuando puedan”, consultas generales sin fecha/hora
-
-Reglas (versión lista para usar)
-P0 (2 reglas)
-
-P0-R1: Si el mensaje contiene palabras de emergencia/seguridad:
-
-ES: emergencia, accidente, ambulancia, incendio, sangre, asalto, robo, seguridad, amenaza
-
-EN: emergency, accident, ambulance, fire, blood, assault, robbery, security, threat
-
-P0-R2: Si el mensaje expresa riesgo inmediato a persona/instalación:
-
-ES: me siento mal, no puedo respirar, me desmayé, hay humo
-
-EN: I feel sick, can't breathe, fainted, there's smoke
-
-Si se activa P0: no generar instrucciones médicas. Solo “contacte al equipo / llamamos a emergencias / envío seguridad”.
-
-P1 (3 reglas)
-
-Aquí es donde ajustamos lo tuyo: no todo “tour” o “horarios” debe ser P1.
-
-P1-R1 (problema habitación + ahora):
-Si contiene (no sirve, falla, no funciona, problema) y menciona impacto inmediato:
-
-ES: ahora, hoy, urgente, no puedo dormir, no puedo entrar, está inundado
-
-EN: now, today, urgent, can't sleep, can't enter, flooded
-
-P1-R2 (transporte con tiempo cercano):
-Si es TRANSPORTE y el mensaje incluye tiempo cercano:
-
-ES: hoy, en 1 hora, esta noche, mañana temprano, aeropuerto a las
-
-EN: today, in 1 hour, tonight, early tomorrow, airport at
-
-P1-R3 (check-in/out + condición especial inmediata):
-Si es CHECK_IN_OUT y contiene:
-
-ES: early check-in, late check-out, llego hoy, vuelo retrasado, estoy en lobby
-
-EN: early check-in, late check-out, arriving today, flight delayed, I'm in the lobby
-
-P2 (por defecto)
-
-Todo lo que no sea P0 o P1 cae en P2, especialmente:
-
-tour, recomendación, menú, horarios, spa, amenidades, cambios sin urgencia explícita.
-
-
-3) Especificación de salida (JSON)
-
-Esto es lo que tu “agente de triage” debe devolver siempre:
-
-{
-  "channel": "whatsapp",
-  "language": "es",
-  "intent": "TRANSPORTE",
-  "priority": "P1",
-  "summary": "Solicitud de traslado al aeropuerto hoy a las 18:00.",
-  "entities": {
-    "datetime": ["2026-03-04 18:00"],
-    "location": ["Aeropuerto CUN"],
-    "people": [],
-    "reservation_id": null,
-    "room_number": null
-  },
-  "suggested_team": "Concierge",
-  "next_best_action": [
-    "Confirmar número de pasajeros y equipaje",
-    "Validar punto de recogida",
-    "Cotizar y confirmar disponibilidad del proveedor"
-  ],
-  "response_draft": "Estimado/a huésped, con gusto le apoyamos con su traslado al Aeropuerto de Cancún. ¿Podría confirmarnos la hora exacta de salida y el número de pasajeros, por favor? Quedamos atentos para coordinarlo de inmediato.",
-  "confidence": 0.86,
-  "flags": {
-    "possible_emergency": false,
-    "possible_sensitive_data": false,
-    "needs_human_review": true,
-    "prompt_injection_risk": false
-  }
-}
+## Esquema de salida (ejemplo)
+```json
+{ ...AQUÍ PEGAS EL JSON DEL PUNTO 3... }
