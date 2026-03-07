@@ -1,0 +1,118 @@
+# Política Personal de Colaboración con IA (Human-in-the-Loop)
+**Autor:** JAIRO A. ROCHA C.  
+**Fecha de creación:** 2026-03-06  
+**Próxima revisión:** 2026-04-06 (mensual)
+
+## Propósito
+Usar IA como **aliado para aprender y construir** sin perder control, criterio ni habilidades.  
+Yo soy el **responsable final** de decisiones, entregables y consecuencias.
+
+---
+
+## 1) Cuándo SÍ y cuándo NO usaré IA (límites claros)
+
+### Sí usaré IA cuando:
+- Necesite **entender conceptos** (como tutor/coach).
+- Quiera **practicar** (quizzes, ejercicios, simulaciones).
+- Quiera **explorar soluciones** (ideas, alternativas, trade-offs).
+- Esté **diseñando sistemas** (arquitectura, flujos, checklists).
+- Esté **mejorando** un texto/código propio (feedback y refactor con explicación).
+- En contexto profesional, para:
+  - **automatizar** tareas repetitivas con supervisión,
+  - generar borradores (respuestas/plantillas),
+  - ayudar a documentar procesos (sin exponer datos sensibles).
+
+### NO usaré IA (mis “red lines”) cuando:
+- Esté en **exámenes** o actividades que requieren demostrar dominio sin ayuda.
+- Me pidan un trabajo **100% original** (ensayo/idea) y el uso de IA esté prohibido.
+- Tenga que entregar algo que **no puedo explicar y defender** con mis palabras.
+- El trabajo requiera usar **datos sensibles reales** (huéspedes, finanzas, contratos, credenciales, llaves API).
+- Me sienta tentado a usar IA como “atajo” para **evitar aprender**.
+
+---
+
+## 2) Cómo usaré IA para aprender (modo tutor)
+- Configuraré la IA como **tutor**, no como “resolutor”.
+- Pediré:
+  - preguntas antes de respuestas,
+  - pistas progresivas,
+  - ejercicios y retroalimentación,
+  - verificación de comprensión (“explícalo con tus palabras”).
+- Mantendré mi aprendizaje activo:
+  - intentaré primero,
+  - luego compararé con la IA,
+  - y finalmente corregiré y documentaré lo aprendido.
+
+---
+
+## 3) Compromisos de transparencia
+- En tareas académicas:
+  - Si el uso de IA es permitido y relevante, **lo declararé** cuando aplique.
+- En proyectos de portafolio:
+  - Documentaré en el README: **qué hizo la IA y qué hice yo**, y qué decisiones tomé.
+- En trabajo profesional:
+  - No presentaré resultados como “automáticos” si hubo intervención humana.
+  - Mantendré trazabilidad básica: prompts clave, criterios de aceptación y cambios.
+
+---
+
+## 4) Mantenimiento de habilidades (evitar dependencia)
+### Habilidades que practicaré sin IA regularmente:
+- Programación básica (Python) y lectura de código
+- Diseño de lógica / pseudocódigo
+- Redacción de explicaciones técnicas
+- Evaluación crítica de resultados (discernment)
+- Comunicación clara con no técnicos
+
+### Rutina mínima
+- 2 sesiones por semana de práctica **AI-free** (30–60 min).
+- “Check” mensual:
+  - ¿puedo explicar mis proyectos sin ver prompts?
+  - ¿puedo resolver un ejercicio similar desde cero?
+
+### Señales de sobre-dependencia (alertas)
+- Copio/pego sin entender.
+- No puedo explicar decisiones.
+- Evito practicar sin IA.
+- Me cuesta avanzar si la IA falla.
+
+---
+
+## 5) Guías éticas (Diligence)
+- **Precisión:** verificaré lo importante (especialmente en decisiones que afectan a terceros).
+- **Privacidad:** no compartiré datos reales sensibles. Usaré datos ficticios o anonimizados.
+- **Seguridad:** no compartiré credenciales, llaves API o información de acceso.
+- **Respeto:** no usaré IA para plagiar trabajo ajeno ni para engañar sobre autoría.
+- **Impacto:** priorizaré soluciones que mejoren procesos sin dañar confianza ni derechos.
+
+---
+
+## 6) Plan de crecimiento continuo
+- Revisaré esta política **mensualmente** y la ajustaré según:
+  - nuevos aprendizajes,
+  - nuevas herramientas,
+  - nuevas necesidades profesionales.
+- Mantendré un **Learning Journal** con:
+  - qué aprendí,
+  - cómo usé IA,
+  - qué verifiqué,
+  - qué haré mejor.
+
+---
+
+## 7) Escenarios de prueba (aplicación práctica)
+### Escenario A: tarea de curso
+- Sí: usar IA para practicar, entender, y revisar mi borrador.
+- No: entregar texto/código que no pueda explicar.
+
+### Escenario B: proyecto de portafolio (hotelería)
+- Sí: usar IA para diseñar spec, prompts, dataset, test run y documentación.
+- No: usar datos reales de huéspedes o sistemas reales sin autorización.
+
+### Escenario C: postulación a empleo
+- Sí: usar IA para mejorar CV y preparar entrevistas (con mis datos reales).
+- No: inventar experiencia o resultados.
+
+---
+
+**Firma:** _______________________
